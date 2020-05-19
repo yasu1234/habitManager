@@ -80,7 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
-      body: Center(child: _pages[_selectedTabIndex]), 
+      body: Center(
+      child: Column(mainAxisSize: MainAxisSize.min,
+      children: <Widget>[Text("継続日数", style: TextStyle(fontSize: 20)), Text("日", style: TextStyle(fontSize: 20))])), 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTabIndex, 
         onTap: _changeIndex, 
