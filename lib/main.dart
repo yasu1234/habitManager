@@ -47,12 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   int _selectedTabIndex = 0;
 
-  List _pages = [
-    Text("ホーム"),
-    Text("記録"),
-    Text("登録"),
-  ];
-
   _changeIndex(int index) {
     setState(() {
       _selectedTabIndex = index;
