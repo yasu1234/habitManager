@@ -84,9 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("ホーム")), 
           BottomNavigationBarItem(
-              icon: Icon(Icons.search), title: Text("記録")), 
+              icon: Icon(Icons.edit), title: Text("記録")), 
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart), title: Text("登録")), 
+              icon: Icon(Icons.data_usage), title: Text("登録")), 
         ], 
       ), 
     );
