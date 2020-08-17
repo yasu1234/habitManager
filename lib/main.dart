@@ -21,6 +21,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: '習慣マネージャー'),
+      // routes:<String, WidgetBuilder> {
+      //   '/record' : (context) => RecordPage(),
+      //   '/setting' : (context) => SettingPage()
+      // }
     );
   }
 }
@@ -47,9 +51,22 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   int _selectedTabIndex = 0;
 
+  List _pages = [
+    Text("ホームで表示される"),
+    Text("記録で表示される"),
+    Text("登録で表示される")
+  ];
+
   _changeIndex(int index) {
     setState(() {
       _selectedTabIndex = index;
+
+      // if (_selectedTabIndex == 1) {
+      //   Navigator.of(context).pushNamed("/record");
+      // } else {
+      //   Navigator.of(context).pushNamed("/setting");
+      // }
+
     });
   }
 
@@ -74,20 +91,16 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
-      body: Center(
-      child: Column(mainAxisSize: MainAxisSize.min,
-      children: <Widget>[Text("継続日数", style: TextStyle(fontSize: 20)), Text("日", style: TextStyle(fontSize: 20))])), 
+      body: Center(child: _pages[_selectedTabIndex]), 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTabIndex, 
         onTap: _changeIndex, 
         type: BottomNavigationBarType.fixed, 
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("ホーム")), 
-          BottomNavigationBarItem(
-              icon: Icon(Icons.edit), title: Text("記録")), 
-          BottomNavigationBarItem(
-              icon: Icon(Icons.data_usage), title: Text("登録")), 
-        ], 
+          BottomNavigationBarItem(icon: Icon(Icons.edit), title: Text("記録")),
+          BottomNavigationBarItem(icon: Icon(Icons.data_usage), title: Text("登録")),
+          ], 
       ), 
     );
   }
