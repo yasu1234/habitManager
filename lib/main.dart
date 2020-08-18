@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:habitmanager/main_page.dart';
+import 'package:habitmanager/nextPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => MainPage(),
+        '/nextpage':(context) => NextPage()
       },
     );
   }

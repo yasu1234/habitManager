@@ -11,7 +11,9 @@ class Home extends StatelessWidget {
         FlatButton(
           child: Text("ボタン", style: TextStyle(fontSize: 16.0)),
           color: Colors.red,
-          onPressed: (){},
+          onPressed: (){
+            Navigator.of(context).pushNamed("/nextpage");
+          },
         )
       ]
     );
