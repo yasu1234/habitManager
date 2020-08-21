@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:habitmanager/nextPage.dart';
 
 
 class Home extends StatelessWidget {
@@ -12,11 +13,13 @@ class Home extends StatelessWidget {
           child: Text("ボタン", style: TextStyle(fontSize: 16.0)),
           color: Colors.red,
           onPressed: (){
-            Navigator.of(context).pushNamed("/nextpage");
+            Navigator.of(context).push(MaterialPageRoute(builder:(context){
+              return NextPage(text: 'AAAA');
+            }));
           },
         )
       ]
-    );
+    );// This trailing comma makes auto-formatting nicer for build methods.
   }
 }
 

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => MainPage(),
-        '/nextpage':(context) => NextPage()
+        // '/nextpage':(context) => NextPage()
       },
     );
   }
